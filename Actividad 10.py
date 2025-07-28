@@ -5,6 +5,10 @@ def invertir():
     cadena = input("\nIngrese una cadena de texto: ")
     invertirCadena(cadena)
     print(f"La cadena invertida es: {invertirCadena(cadena)}")
+def sumarNumeros():
+    n = int(input("Ingrese hastaa que número se va a sumar: "))
+    sumaNumeros(n)
+    print(f"La suma de numeros es: {sumaNumeros(n)}")
 
 def sumaNumeros(n):
     if n <= 0:
@@ -27,7 +31,7 @@ def main():
                 case 1:
                     invertir()
                 case 2:
-                    sumaNumeros()
+                    sumarNumeros()
                 case 3:
                     print("askf3")
                 case 4:
