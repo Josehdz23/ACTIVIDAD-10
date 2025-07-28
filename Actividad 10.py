@@ -62,7 +62,7 @@ def sumarDigitos(numero):
 def contarDigitos():
     while True:
         try:
-            num = int(input("Ingrese "))
+            num = int(input("Ingrese un numero para contar sus digitos: "))
         except:
             print("El numero ingresado no es valido")
 def main():
