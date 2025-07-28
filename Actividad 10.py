@@ -5,10 +5,22 @@ def invertir():
     cadena = input("\nIngrese una cadena de texto: ")
     invertirCadena(cadena)
     print(f"La cadena invertida es: {invertirCadena(cadena)}")
+
+def invertirCadena(cadena):
+    if len(cadena) == 0:
+        return ""
+    else:
+        return cadena[-1] + invertirCadena(cadena[:-1])
+
 def sumarNumeros():
-    n = int(input("Ingrese hastaa que número se va a sumar: "))
-    sumaNumeros(n)
-    print(f"La suma de numeros es: {sumaNumeros(n)}")
+    while True:
+        try:
+            n = int(input("Ingrese hastaa que número se va a sumar: "))
+            sumaNumeros(n)
+            print(f"La suma de numeros es: {sumaNumeros(n)}")
+            break
+        except:
+            print("El numero ingresado no es valido")
 
 def sumaNumeros(n):
     if n <= 0:
@@ -16,11 +28,20 @@ def sumaNumeros(n):
     else:
         return n + sumaNumeros(n-1)
 
-def invertirCadena(cadena):
-    if len(cadena) == 0:
-        return ""
-    else:
-        return cadena[-1] + invertirCadena(cadena[:-1])
+def cuentaRegresiva():
+    while True:
+        try:
+            c = int(input("Ingrese desde donde inicirá la cuenta regresiva: "))
+            cuentaReg(c)
+            break
+        except:
+            print("El numero ingresado no es valido")
+
+def cuentaReg(c):
+    if c <= 0:
+        return 0
+    print(c)
+    cuentaReg(c - 1)
 
 def main():
     while True:
@@ -33,7 +54,7 @@ def main():
                 case 2:
                     sumarNumeros()
                 case 3:
-                    print("askf3")
+                    cuentaRegresiva()
                 case 4:
                     print("askf4")
                 case 5:
