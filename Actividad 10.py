@@ -15,7 +15,7 @@ def invertirCadena(cadena):
 def sumarNumeros():
     while True:
         try:
-            n = int(input("Ingrese hastaa que número se va a sumar: "))
+            n = int(input("\nIngrese hastaa que número se va a sumar: "))
             sumaNumeros(n)
             print(f"La suma de numeros es: {sumaNumeros(n)}")
             break
@@ -31,7 +31,7 @@ def sumaNumeros(n):
 def cuentaRegresiva():
     while True:
         try:
-            c = int(input("Ingrese desde donde inicirá la cuenta regresiva: "))
+            c = int(input("\nIngrese desde donde inicirá la cuenta regresiva: "))
             cuentaReg(c)
             break
         except:
@@ -43,6 +43,28 @@ def cuentaReg(c):
     print(c)
     cuentaReg(c - 1)
 
+def sumaDigitos():
+    while True:
+        try:
+            numero = int(input("\nIngrese un numero, y se sumarán sus digitos:"))
+            sumarDigitos(numero)
+            print(f"La suma de los digitos del numero ({numero}) es: {sumarDigitos(numero)}")
+            break
+        except:
+            print("El numero ingresado no es valido")
+
+def sumarDigitos(numero):
+    if numero == 0:
+        return 0
+    else:
+        return numero % 10 + sumarDigitos(numero // 10)
+
+def contarDigitos():
+    while True:
+        try:
+            num = int(input("Ingrese "))
+        except:
+            print("El numero ingresado no es valido")
 def main():
     while True:
         menu()
@@ -56,7 +78,7 @@ def main():
                 case 3:
                     cuentaRegresiva()
                 case 4:
-                    print("askf4")
+                    sumaDigitos()
                 case 5:
                     print("askf5")
                 case 6:
