@@ -6,6 +6,12 @@ def invertir():
     invertirCadena(cadena)
     print(f"La cadena invertida es: {invertirCadena(cadena)}")
 
+def sumaNumeros(n):
+    if n <= 0:
+        return 0
+    else:
+        return n + sumaNumeros(n-1)
+
 def invertirCadena(cadena):
     if len(cadena) == 0:
         return ""
