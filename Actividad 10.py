@@ -27,7 +27,7 @@ def main():
                 case 1:
                     invertir()
                 case 2:
-                    print("askf")
+                    sumaNumeros()
                 case 3:
                     print("askf3")
                 case 4:
