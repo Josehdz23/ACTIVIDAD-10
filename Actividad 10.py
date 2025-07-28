@@ -1,5 +1,5 @@
 def menu():
-    print("\n===== MENÚ DE RETOS RECURSIVOS =====\n1. Invertir una cadena de texto\n2. Calcular la suma de los primeros N números naturales\n3. Imprimir una cuenta regresiva desde N a 1\n4. Sumar los digitos de un numero\n5. Contar cuántos digitos tiene un número\n6. Salir")
+    print("\n===== MENÚ DE RETOS RECURSIVOS =====\n1. Invertir una cadena de texto\n2. Calcular la suma de los primeros N números naturales\n3. Imprimir una cuenta regresiva desde N a 1\n4. Sumar los dígitos de un número\n5. Contar cuántos dígitos tiene un número\n6. Salir")
 
 def invertir():
     cadena = input("\nIngrese una cadena de texto: ")
@@ -15,12 +15,15 @@ def invertirCadena(cadena):
 def sumarNumeros():
     while True:
         try:
-            n = int(input("\nIngrese hastaa que número se va a sumar: "))
-            sumaNumeros(n)
-            print(f"La suma de numeros es: {sumaNumeros(n)}")
-            break
+            n = int(input("\nIngrese hasta que número se va a sumar: "))
+            if n > 0:
+                sumaNumeros(n)
+                print(f"La suma de los números es: {sumaNumeros(n)}")
+                break
+            else:
+                print("El número ingresado no es válido, reintente")
         except:
-            print("El numero ingresado no es valido")
+            print("El número ingresado no es válido")
 
 def sumaNumeros(n):
     if n <= 0:
@@ -31,11 +34,14 @@ def sumaNumeros(n):
 def cuentaRegresiva():
     while True:
         try:
-            c = int(input("\nIngrese desde donde inicirá la cuenta regresiva: "))
-            cuentaReg(c)
-            break
+            c = int(input("\nIngrese desde donde se inicirá la cuenta regresiva: "))
+            if c > 0:
+                cuentaReg(c)
+                break
+            else:
+                print("El número ingresado no es válido, reintente")
         except:
-            print("El numero ingresado no es valido")
+            print("El número ingresado no es válido, reintente")
 
 def cuentaReg(c):
     if c <= 0:
@@ -46,12 +52,15 @@ def cuentaReg(c):
 def sumaDigitos():
     while True:
         try:
-            numero = int(input("\nIngrese un numero, y se sumarán sus digitos:"))
-            sumarDigitos(numero)
-            print(f"La suma de los digitos del numero ({numero}) es: {sumarDigitos(numero)}")
-            break
+            numero = int(input("\nIngrese un número, y se sumarán sus dígitos:"))
+            if numero > 0:
+                sumarDigitos(numero)
+                print(f"La suma de los dígitos del número ({numero}) es: {sumarDigitos(numero)}")
+                break
+            else:
+                print("El número ingresado no es válido, reintente")
         except:
-            print("El numero ingresado no es valido")
+            print("El número ingresado no es válido, reintente")
 
 def sumarDigitos(numero):
     if numero == 0:
@@ -62,14 +71,27 @@ def sumarDigitos(numero):
 def contarDigitos():
     while True:
         try:
-            num = int(input("Ingrese un numero para contar sus digitos: "))
+            num = int(input("\nIngrese un número para contar sus dígitos: "))
+            if num > 0:
+                contarDig(num)
+                print(f"El número ({num}) tiene {contarDig(num)} dígitos!")
+                break
+            else:
+                print("El número ingresado no es válido, reintente")
         except:
-            print("El numero ingresado no es valido")
+            print("El número ingresado no es válido, reintente")
+
+def contarDig(num):
+    if num < 10:
+        return 1
+    else:
+        return 1 + contarDig(num // 10)
+
 def main():
     while True:
         menu()
         try:
-            opcion = int(input("\nSeleccione una opcion: "))
+            opcion = int(input("\nSeleccione una opción: "))
             match opcion:
                 case 1:
                     invertir()
@@ -80,7 +102,7 @@ def main():
                 case 4:
                     sumaDigitos()
                 case 5:
-                    print("askf5")
+                    contarDigitos()
                 case 6:
                     print("SALIENDO...")
                     break
